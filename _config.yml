@@ -82,12 +82,12 @@ mathjax: false      #enable mathjax if true
 #### Author information
 author:
   name: mazhiyu      ## e.g. wuchong Author name
-  intro_line1:  "Hello ,I'm mazhiyu in xian."    ## your introduction on the bottom of the page
+  intro_line1:  "Hello ,I'm mazhiyu in xi'an."    ## your introduction on the bottom of the page
   intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
-  weibo_verifier: 9d4bc461 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
-  tsina: 9d4bc461     ## e.g. 2176287895  Your weibo ID,It will be used in share button.
-  douban: 74961542    ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
+  weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
+  tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
+  douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
   email: mazhiyu123@qq.com     ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
@@ -107,19 +107,19 @@ toc:
 
 #### Links
 links:
-  tcOops's Blog: http://spacenx.pw/
+  Other's Blog
 
 excerpt_separator: <!--more-->
 
 #### Comment
 duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
-disqus_shortname: sunxiaobiu    ## e.g. wuchong   your disqus short name.
+disqus_shortname: mazhiyu    ## e.g. wuchong   your disqus short name.
 
 #### Share button
 jiathis:
-  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
-  id: 2084062   ## e.g. 1889330 your jiathis ID.
-  tsina: 5729765191 ## e.g. 2176287895 Your weibo id,It will be used in share button.
+  enable:  ## if you use jiathis as your share tool,the built-in share tool won't be display.
+  id:    ## e.g. 1889330 your jiathis ID.
+  tsina:  ## e.g. 2176287895 Your weibo id,It will be used in share button.
 
 #### Analytics
 google_analytics:
@@ -129,8 +129,8 @@ google_analytics:
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
 baidu_tongji:
-  enable: true
-  sitecode: 7578feb1a00553f099171e7b2560ae78 ## e.g. e6d1f421bbc9962127a50488f9ed37d1 your baidu tongji site code
+  enable: false
+  sitecode:  ## e.g. e6d1f421bbc9962127a50488f9ed37d1 your baidu tongji site code
 cnzz_tongji:
   enable: false
   siteid:    ## e.g. 1253575964 your cnzz tongji site id
