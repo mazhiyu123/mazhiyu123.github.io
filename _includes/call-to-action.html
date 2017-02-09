@@ -1,0 +1,25 @@
+<section class="container" style="width: 102%" id="about">
+    <span style="color:#2ca6cb;text-algin:left;font-size:30px">
+        <h2>&nbsp;&nbsp;最近的文章</h2>
+    </span>
+    {% include index.html %}
+    <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+    {% if table && (item.toc != false) && site.toc.aside %}
+    <div id="toc" class="toc-aside toc-content">
+        {% if item.list_number == false %}
+        <!--<%- toc(item.content,{list_number:false}) %>-->
+        {% else %}
+        <!--<%- toc(item.content) %>-->
+        {% endif %}
+    </div>
+    {% endif %}
+    <div id="asidepart">
+        <aside class="clearfix">
+            {% for widget in site.widgets %}
+            {% include _widget/{{widget}}.html %}
+            {% endfor %}
+        </aside>
+    </div>
+
+
+</section>

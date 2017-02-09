@@ -1,41 +1,163 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+title: sunxiaobiu技术不宅
+email: sunxiaobiu@gmail.com
+description: Source of me.
+localurl: "" # the subpath of your site, e.g. /blog/
+url: http://sunxiaobiu.github.io # the base hostname & protocol for your site
+me-img: "/img/HeadPicture.png"
 
-# Build settings
-# markdown: kramdown
-# theme: jekyll-theme-cayman
-# gems:
-#   - jekyll-feed
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-markdown: kramdown
-theme: jekyll-theme-cayman
+twitter_username:
+github_username: sunxiaobiu
+
+# This is the default format.
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /:categories/:year/:month/:day/:title
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+highlighter: pygments
+
+assets: http://sunxiaobiu.github.io/assets
+baseurl: http://sunxiaobiu.github.io
+
+# pagination
+paginate: 10
+
+# Markdown Processors
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - tables
+    - lax_spacing
+    - with_toc_data
+
+tagline: A technology blog for myself.
+
+
+##### Menu
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+## you can create `tags` and `categories` folders in `../source`.
+## And create a `index.md` file in each of them.
+## set `front-matter`as
+## layout: tags (or categories)
+## title: tags (or categories)
+## ---
+
+#### Widgets
+widgets:
+- category
+- tag
+- links
+- douban
+- rss
+## provide seven widgets:category,tag,rss,archive,tagcloud,links,weibo,douban
+
+
+#### RSS
+rss: /atom.xml ## RSS address.
+
+#### Image
+imglogo:
+  enable: true             ## display image logo true/false.
+  src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
+favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.
+apple_icon: img/jacman.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
+author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
+banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
+
+#### index post is expanding or not
+index:
+  expand: true           ## default is unexpanding,so you can only see the short description of each post.
+  excerpt_link: Read More
+
+close_aside: false  #close sidebar in post page if true
+mathjax: false      #enable mathjax if true
+
+#### Author information
+author:
+  name: sunxiaobiu      ## e.g. wuchong Author name
+  intro_line1:  "Hello ,I'm Sunxiaoyu in Shanghai."    ## your introduction on the bottom of the page
+  intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
+  weibo: 5729765191     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
+  weibo_verifier: 9d4bc461 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
+  tsina: 9d4bc461     ## e.g. 2176287895  Your weibo ID,It will be used in share button.
+  douban: 74961542    ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
+  zhihu: sunxiaobiu     ## e.g. jark  for http://www.zhihu.com/people/jark
+  email: sunxiaobiu@gmail.com     ## e.g. imjark@gmail.com
+  twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
+  github: sunxiaobiu    ## e.g. wuchong for https://github.com/wuchong
+  facebook: xiaobiu.sun  ## e.g. imjark for https://facebook.com/imjark
+  linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
+  google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
+  stackoverflow: 5633124 ## e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
+## if you set them, the corresponding  share button will show on the footer
+
+#### Toc
+toc:
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
+## you can set both of the value to true of neither of them.
+## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
+
+#### Links
+links:
+  tcOops's Blog: http://spacenx.pw/
+
+excerpt_separator: <!--more-->
+
+#### Comment
+duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
+disqus_shortname: sunxiaobiu    ## e.g. wuchong   your disqus short name.
+
+#### Share button
+jiathis:
+  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
+  id: 2084062   ## e.g. 1889330 your jiathis ID.
+  tsina: 5729765191 ## e.g. 2176287895 Your weibo id,It will be used in share button.
+
+#### Analytics
+google_analytics:
+  enable: false
+  id:        ## e.g. UA-46321946-2 your google analytics ID.
+  site:      ## e.g. wuchong.me your google analytics site or set the value as auto.
+## You MUST upgrade to Universal Analytics first!
+## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
+baidu_tongji:
+  enable: true
+  sitecode: 7578feb1a00553f099171e7b2560ae78 ## e.g. e6d1f421bbc9962127a50488f9ed37d1 your baidu tongji site code
+cnzz_tongji:
+  enable: false
+  siteid:    ## e.g. 1253575964 your cnzz tongji site id
+
+#### Miscellaneous
+fancybox: true        ## if you use gallery post or want use fancybox please set the value to true.
+totop: true           ## if you want to scroll to top in every post set the value to true
+
+
+#### Custom Search
+google_cse:
+  enable: true
+  cx: 002270726174808560530:daiye9ndzfk  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
+## https://www.google.com/cse/
+## To enable the custom search You must create a "search" folder in '/source' and a "index.md" file
+## set the 'front-matter' as
+## layout: search
+## title: search
+## ---
+baidu_search:     ## http://zn.baidu.com/
+  enable: false
+  id: ## e.g. "783281470518440642"  for your baidu search id
+  site: http://zhannei.baidu.com/cse/search  ## your can change to your site instead of the default site
+
+tinysou_search:     ## http://tinysou.com/
+  enable: false
+  id:  ## e.g. "4ac092ad8d749fdc6293" for your tiny search id
+
 gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
+ - jemoji
