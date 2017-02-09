@@ -20,7 +20,7 @@ assets: http://mazhiyu123.github.io/assets
 baseurl: http://mazhiyu123.github.io
 
 # pagination
-paginate: 10
+paginate: 5
 
 # Markdown Processors
 markdown: redcarpet
