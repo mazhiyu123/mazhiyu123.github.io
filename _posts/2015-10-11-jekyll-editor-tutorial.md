@@ -2,7 +2,7 @@
 category: daily
 layout: post
 tags:
-  - daily
+  - Jekyll
 title: 'Jekyll Editor 使用入门'
 time: 2016.02.13 14:22:00
 excerpt: Jekyll Editor 专门为 Jekyll 博客定制的强大的 markdown 编辑器，它会自动从`<yourname>.github.io`仓库读取`_post`目录下的博客列表，并可以读取、创建、修改博客。
