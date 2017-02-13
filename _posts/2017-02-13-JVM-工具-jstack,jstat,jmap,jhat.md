@@ -1,11 +1,15 @@
 ---
 published: true
 layout: post
-title: JVM-工具-jstack,jstat,jmap,jhat
+title: JVM-工具-[jstack,jstat,jmap,jhat]
 category: JVM
 tags: 
-	-JVM
+	- JVM
 time: 2017.02.13 9:43:00
+excerpt: 1. jstack   打印某个进程中线程堆栈的情况  
+-l long listings，会打印出额外的锁信息，在发生死锁时可以用jstack  
+-l pid来观察锁持有情况  
+-m mixed mode，不仅会输出Java堆栈信息，还会输出C/C++堆栈信息（比如Native方法）
 ---
 
 1. jstack   打印某个进程中线程堆栈的情况  
