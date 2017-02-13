@@ -1,5 +1,5 @@
 ---
-category: daily
+category: Jekyll
 layout: post
 tags:
   - Jekyll
