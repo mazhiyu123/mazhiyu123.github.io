@@ -1,10 +1,9 @@
 ---
-category: program
+category: Java
 layout: post
 published: true
 tags:
-  - cpp
-  - c
+  - Java
 title: 位域的大小端问题
 categories: []
 time: 2016.02.6 14:22:00

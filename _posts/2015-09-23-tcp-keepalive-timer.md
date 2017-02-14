@@ -2,9 +2,9 @@
 published: true
 layout: post
 title: TCP 之保活计时器
-category: network
+category: 计算机网络
 tags: 
-  - tcp
+  - TCP
 time: 2016.02.9 14:22:00
 excerpt: 保活计时器并不是 TCP 规范中的一部分，是一个有争论的功能。
 
