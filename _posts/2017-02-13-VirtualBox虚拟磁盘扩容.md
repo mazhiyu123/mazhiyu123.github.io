@@ -34,7 +34,7 @@ VBoxManage.exe: error: Resize medium operation for this format is not implemente
     待解决！！！  
     一种解决的方法！！！  
     linux开机的时候按e进入编辑模式  
-    
+    ![image](http://od4ghyr10.bkt.clouddn.com/linux%E5%BC%80%E6%9C%BA%E8%AE%BE%E7%BD%AE.png)  
     在.UTF-8 后面加入init=/bin/sh    进入sh。  
 
     在准备删除的时候遇到ready only system 的提示，无法删除，su - 进入root也不行。
