@@ -11,7 +11,7 @@ excerpt: MarkDown-KaTex 解析数学公式
 ---
 
 
-```math
+$$
 E = mc^2
 
 \frac{1}{x}
@@ -23,5 +23,5 @@ a^2
 a_1
 
 \sum
-```
+$$
 http://blog.csdn.net/kamidox/article/details/48380239
