@@ -2,13 +2,17 @@
 published: true
 layout: post
 title: MarkDown-KaTex 解析数学公式
-category: Shell
+category: Jekyll
 tags: 
-  - Shell
-  - Linux
+  - Jekyll
 time: 2017.02.13 11:20:00
 excerpt: MarkDown-KaTex 解析数学公式
 ---
+
+<img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" style="border:none;">
 
 
 $$
