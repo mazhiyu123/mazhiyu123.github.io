@@ -6,7 +6,7 @@ category: Shell
 tags: 
   - Linux
   - Shell
-time: 2017.04-06 15:24:00
+time: 2017.04.06 15:24:00
 excerpt:   shell 管理Linux操作系统
 ---
 

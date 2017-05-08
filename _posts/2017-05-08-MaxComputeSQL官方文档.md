@@ -6,7 +6,7 @@ category: MaxComputeSQL
 tags: 
   - MaxComputeSQL
   - MaxCompute
-time: 2017-05-08 19:21:00
+time: 2017.05.08 19:21:00
 excerpt:   MaxCompute SQL官方文档
 ---
 
