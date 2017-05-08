@@ -1,0 +1,44 @@
+---
+published: true
+layout: post
+title: Yarn组件-ResourceManager
+category: Hadoop
+tags: 
+  - Hadoop
+time: 2017.02.16 10:17:00
+excerpt: ResourceManager是Yarn的核心功能模块，它主要对整个集群进行资源管理和调度。各个节点信息以及运行在节点上的任务的信息会在ResourceManager中进行汇总。ResourceManager会对所有信息进行综合考量，而后进行相应的资源分配/回收和作业调度。
+---
+
+##### ResourceManager
+ResourceManager是Yarn的核心功能模块，它主要对整个集群进行资源管理和调度。各个节点信息以及运行在节点上的任务的信息会在ResourceManager中进行汇总。ResourceManager会对所有信息进行综合考量，而后进行相应的资源分配/回收和作业调度。
+ResourceManager是通过RPC与其他功能模块交互的。具体如下图所示：  
+![image](http://od4ghyr10.bkt.clouddn.com/ResourceManager%E4%BA%A4%E4%BA%92%E5%8D%8F%E8%AE%AE.png)  
+
+1. ResourceTrackerProtocol：该协议是ResourceManager和NodeManager之间通信协议。这里ResourceManager可以看作是RPC架构中的服务器端而NodeManager可以看作是客户端。客户端通过该协议向服务端汇报Container运行状态、节点健康状态以及注册自己的操作。与此同时，客户端会领取到服务端下达的操作命令。客户端发送请求和领取命令都是周期性执行的操作。    
+
+2. ApplicationMasterProtocol：该协议是ApplicationMaster和ResourceManager之间的通信协议。ApplicationMaster扮演 RPC客户端的角色，而ResourceManager扮演RPC服务端的角色。客户端通过该协议完成向服务端注册自己，申请Container和释放Container等操作。  
+
+3. ApplicationClientProtocol：该协议是Client(这里的Client可以理解为提交作业的节点)和ResourceManager之间的通信协议。同样的ResourceManager作为服务端，Client作为客户端。客户端可以通过这个协议查看正在运行作业的执行进度和状态或者控制作业的一些行为。 
+
+ResourceManager内部又是通过几个不同模块之间协调工作来完成其所有管理功能的。ResourceManager的内部功能模块如下所示：  
+![image](http://od4ghyr10.bkt.clouddn.com/ResourceManager%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97.png)  
+各个功能模块的功能总结如下：  
+1. 用户交互模块(User Service)
+该模块包括三个子模块ClientRMService,AdminService和RMWebApp，这三个子模块分别对User，Admin,WebUI三个外部请求提供服务。User代表的是普通用户，由它发起的请求包括提交和停止应用程序、查看执行进度和执行状态等操作。Admin代表的是管理员，由它发起的请求包括管理普通用户、管理集群、更新访问控制列表等全局管理操作[12]。WebUI是通过浏览器的方式显示目前集群和运行在集群上面的应用程序的状态。这里Yarn对外提供了一个Web界面，这一部分是YARN仿照Haml(一种标记语言)开发的一个轻量级嵌入式Web框架。
+
+2. NM(NodeManager)管理模块
+该模块主要包含三个子模块NMLivelinessMonitor，NodesListManager和ResourceTrackService。NMLivelinessMonitor子模块的功能是监控NodeManager是否活着。具体的判定方式是，如果NodeManager在10分钟内没有向ResourceManager发送心跳包则可以认为这个节点已经死掉了，NodesListManager子模块的功能是管理exclude和include这两个节点列表(可以将这两个节点列表分别理解为黑名单和白名单)，ResourceTrackerServiceo子模块的功能是负责处理来自NodeManager的请求，主要包括注册和心跳两种请求[13]。其中，注册请求是NodeManager启动时发生的请求，注册请求的信息中包含节点hostname、存储和计算资源上限等信息。心跳请求是周期性行为，请求中包含节点健康状况，各个Container中Task的运行状态，运行的Application列表等信息。
+3. AM(ApplicationMaste)管理模块
+该模块包含三个子模块AMLiveLinessMonitor，ApplicationMasterLauncher和ApplicationMasterService。AMLiveLinessMonitor子模块的功能是监控AM是否活着，判定方式和NodeManager管理模块中的NMLivelinessMonitor是一样的。需要注意的是在AM被判定为死亡之后，运行在AM上的所有的Container的状态将被置为失败。与此同时，AM本身会被重新分配到另外一个节点上执行。在配置中用户是可以指定每个AM的尝试重新运行次数(默认是2)。AppIicationMasterLauncher子模块的功能是负责与某个NodeManager通信，要求它为某个应用程序启动AM。AMS(AppIicationMasterService)子模块的功能是负责处理来自子AppIicationMaster的请求，主要包注册请求和心跳请求(它基本和NMLivelinessMonitor的功能是一样的)。注册请求同样是启动时发生的行为，注册请求包中包含ApplicationMaster启动节点，RPC所需要的端口号和URL等信息。而心跳请求信息中包含所需计算和存储资源描述、待释放的Container列表、运行失败Container列表等。而AMS则为相应的请求返回新分配的Container、运行失败的Container、可以抢占Container列表等信息。
+
+4. Application管理模块
+该模块包含三个模块ApplicationACLsManager，RMAppManager和ContainerAllocationExpirer。ApplicationACLsManager子模块管理应用程序访问权限，包含两部分权限:查看权限和修改权限。查看权限主要用于查看应用程序基本信息，而修改权限则主要用于修改应用程序优先级、杀死应用程序等。RMAppManager管理应用程序的启动和关闭。ContainerAllocationExpirer子模块的功能是分配资源容器Container。ResourceManager分配一个新的Container给ApplicationMaster之后，ApplicationMaster应该在10分钟之内启动这个Container，否则ResourceManager会回收这个Container。
+
+5. 状态机管理模块
+ResourceManager使用有限状态机维护有状态对象的生命周期。ResourceManager共维护了4类状态机，分别是RMApp, RMAppAttempt, RMContainer和RMNode。其中，RMApp维护了一个应用程序(Application)的整个运行周期，包括从启动到运行结束的整个过程。RMAppAttempt维护的是应用程序中任务的每次运行尝试的状态机。RMContainer维护了一个Container的运行周期，从创建Container到运行结束这整个的处理过程。RMNode维护了一个NodeManager的生命周期，包括启动到运行结束整个过程。
+
+6. 安全管理模块
+ResourceManage也有非常完善 的权限管理机制，主要由ClientToAMSecretManager, ContainerTokenSecretManager, ApplicationTokenSecretManagcr等模块完成。
+
+7. ResourceScheduler资源分配模块
+ResourceScheduler是资源调度器，它按照一定规则将集群中的资源分配给各个应用程序，在Hadoop2.7.2这个版本中可以分配两种资源：内存和CPU。ResourceScheduler是一个插拔式模块，YARN自带了一个批处理资源调度器FIFO( First In First Out)和两个多用户调度器Fair Scheduler和Capacity Scheduler(默认资源调度器)。
