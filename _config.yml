@@ -50,21 +50,6 @@ github_username:    mazhiyu123
 #facebook_username:  decaywood
 email:              mazhiyu123@qq.com
 
-# Jekyll
-permalink:          /:title/
-markdown:           kramdown
-highlighter:        rouge
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
-
 
 # Analytics settings
 # Baidu Analytics
