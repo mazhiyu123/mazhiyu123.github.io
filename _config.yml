@@ -62,7 +62,7 @@ email:              mazhiyu123@qq.com
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: NO ONE
-sidebar-avatar: img/avatar-decaywood.png     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/avatar-mazhiyu.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
