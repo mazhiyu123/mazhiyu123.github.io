@@ -1,0 +1,45 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="XwywRXscIz-aQz1LzZZeWnOlMmqnBCjp8Ko4O0Xf-eY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords"  content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+    <link rel="shortcut icon" href="{{ site.cdnurl }}/img/favicon.ico">
+
+    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.cdnurl }}/css/decaywood-blog.min.css?v=2.2.5beta">
+
+    <!-- Mode Switch -->
+    <link id="theme" rel="stylesheet" href="{{ site.cdnurl }}/css/daily-mode.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Highlight -->
+    <link href="//cdn.bootcss.com/highlight.js/9.2.0/styles/androidstudio.min.css" rel="stylesheet">
+
+    <!-- Animation -->
+    <link href="//cdn.bootcss.com/animsition/4.0.1/css/animsition.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"</script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>

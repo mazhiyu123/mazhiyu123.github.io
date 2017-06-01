@@ -1,0 +1,29 @@
+---
+layout:     post
+random-img: true
+title:      title
+subtitle:   subtitle
+date:       2017-01-02 12:44:31
+author:     decaywood
+description:
+keywords:
+tags:
+    - 生活
+---
+
+<img src="{{site.cdnurl}}/img/post/2017/Lock.svg" alt="SVG" style="background-color:white">
+
+特殊符号大全：
+
+
+标点符号 ˉˇ¨‘’々～‖∶”’‘｜〃〔〕《》「」『』．〖〗【【】（）〔〕｛｝
+
+数字序号 ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ①②③④⑤⑥⑦⑧⑨⑩
+
+数学符号 ≈≡≠＝≤≥＜＞≮≯∷±＋－×÷／∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√
+
+单位符号 °′〃＄￡￥‰％℃¤￠
+
+补充收集 ⊙●○①⊕◎Θ⊙¤㊣▂ ▃ ▄ ▅ ▆ ▇ █ █ ■ ▓ 回 □ 〓≡ ╝╚╔ ╗╬ ═ ╓ ╩ ┠ ┨┯ ┷┏ ┓┗ ┛┳⊥『』┌♀◆◇◣◢◥▲▼△▽⊿
+
+

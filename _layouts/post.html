@@ -1,0 +1,167 @@
+---
+layout: default
+---
+
+
+<!-- Post Header -->
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %}
+                        always create a h2 for keeping the margin , decaywood
+                    {% endcomment %}
+                    {% comment %} if page.subtitle {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% comment %} endif {% endcomment %}
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%Y-%m-%d" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<div>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+                <a id="edit-in-github" style="color: inherit"><i class="fa fa-github-square fa-1g"> - 错误校对</i></a>
+                <hr>
+				{{ content }}
+
+                <hr>
+
+                {% if site.duoshuo_share && site.duoshuo_username %}
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="{{page.id}}"
+                    data-title="{{page.title}}"
+                    data-url="{{site.url}}{{site.baseurl}}{{page.url}}"
+                    data-images="{{ site.cdnurl }}/{{ site.sidebar-avatar }}"
+                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.SEOTitle }} " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                {% endif %}
+
+
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                            Previous<br>
+                            <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                            Next<br>
+                            <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+
+                {% if site.duoshuo_username %}
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="{{page.id}}"
+                        data-title="{{page.title}}"
+                        data-url="{{site.url}}{{site.baseurl}}{{page.url}}" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                {% endif %}
+
+                {% if site.disqus_username %}
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                {% endif %}
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-3 col-lg-offset-0
+                visible-lg-block
+                catalog-container
+                hidden-print
+                hidden-xs
+                hidden-sm
+                ">
+                <div class="side-catalog">
+                    <h5><a class="catalog-toggle">目录</a></h5>
+                    <hr>
+                    <div class="catalog-body"></div>
+                </div>
+            </div>
+
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				{% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+        				{% endfor %}
+        			</div>
+                </section>
+                {% endif %}
+
+                <!-- Friends Blog -->
+                {% if site.data.members %}
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    {% for member in site.data.members %}
+                        <li><a href="{{member.href}}">{{member.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+

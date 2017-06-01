@@ -1,0 +1,137 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                    {% if site.RSS %}
+                    <li>
+                        <a href="{{prepend: site.baseurl}}/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.twitter_username %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <!-- add Weibo, Zhihu by decaywood, add target = "_blank" to <a> by decaywood -->
+                    {% if site.zhihu_username %}
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.weibo_username %}
+                    <li>
+                        <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                    {% if site.facebook_username %}
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.github_username %}
+                    <li>
+                        <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.v2ex_username %}
+                    <li>
+                        <a target="_blank" href="http://www.v2ex.com/member/{{ site.v2ex_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse"><span style="font-size: small; vertical-align: 100%">V2EX</span></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.lofter_username %}
+                    <li>
+                        <a target="_blank" href="http://{{ site.lofter_username }}.lofter.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">L</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; {{ site.title }} {{ site.time | date: "%Y" }}
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- global parameters -->
+<script>
+    var pageRandom = "{{ page.random-img }}";
+    var exception = "{{ page.exception }}";
+    var debug = "{{ site.debug }}";
+    var pagePath = "{{ site.github-source }}/tree/master/{{ page.path }}";
+    var cssPath = "{{ site.cdnurl }}/css/";
+    var jsPath = "{{ site.cdnurl }}/js/";
+    var _gaId = "{{ site.ga_track_id }}";
+    var _gaDomain = "{{ site.ga_domain }}";
+    var _baId = "{{ site.ba_track_id }}";
+    var _51laId = "{{ site.51la_track_id }}";
+    var _duoshuo_name = "{{site.duoshuo_username}}";
+    var duoshuoQuery = {short_name: _duoshuo_name };
+    var imgCount = "{{ site.post-img-count }}";
+    var headerImg;
+    if(pageRandom) {
+        headerImg = "{{ site.cdnurl }}/img/post/" + Math.ceil(Math.random() * imgCount) + ".jpg";
+    } else {
+        headerImg = "{{ site.cdnurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}";
+    }
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Animation -->
+<script src="//cdn.bootcss.com/animsition/4.0.1/js/animsition.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="{{site.cdnurl}}/js/decaywood-blog.min.js?v=2.2.5beta"></script>
