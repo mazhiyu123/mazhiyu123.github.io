@@ -135,9 +135,9 @@
     var imgCount = "{{ site.post-img-count }}";
     var headerImg;
     if(pageRandom) {
-        headerImg = "http://od4ghyr10.bkt.clouddn.com/img/post/" + Math.ceil(Math.random() * imgCount) + ".jpg";
+        headerImg = "{{ site.cdnurl }}/img/post/" + Math.ceil(Math.random() * imgCount) + ".jpg";
     } else {
-        headerImg = "http://od4ghyr10.bkt.clouddn.com/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}";
+        headerImg = "{{ site.cdnurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}";
     }
 </script>
 <!-- Bootstrap Core JavaScript -->
