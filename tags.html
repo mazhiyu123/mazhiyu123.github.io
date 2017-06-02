@@ -5,6 +5,18 @@ description: keep hungry keep foolish
 header-img: "img/tag-bg.jpg"
 ---
 
+{% if site.data.news %}
+<div id="news">
+    <ul>
+        <li><b>博客已累计录入 {{ paginator.total_posts }} 篇文章</b></li>
+        {% for line in site.data.news %}
+        <li><b>{{ line }}</b></li>
+        {% endfor %}
+    </ul>
+</div>
+<br/>
+{% endif %}
+
 <!-- Page Header -->
 <header class="intro-header">
     <div class="container">
@@ -20,17 +32,6 @@ header-img: "img/tag-bg.jpg"
 </header>
 
 
-{% if site.data.news %}
-<div id="news">
-    <ul>
-        <li><b>博客已累计录入 {{ paginator.total_posts }} 篇文章</b></li>
-        {% for line in site.data.news %}
-        <li><b>{{ line }}</b></li>
-        {% endfor %}
-    </ul>
-</div>
-<br/>
-{% endif %}
 
 <!-- Main Content -->
 <div class="container">
