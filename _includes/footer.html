@@ -135,7 +135,7 @@
     var imgCount = "{{ site.post-img-count }}";
     var headerImg;
     if(pageRandom) {
-        headerImg = "{{ site.cdnurl }}/img/post/" + Math.ceil(Math.random() * imgCount) + ".jpg";
+        headerImg = "{{ site.cdnurl }}/blog/head-bg-img/" + Math.ceil(Math.random() * imgCount) + ".jpg";
     } else {
         headerImg = "{{ site.cdnurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}";
     }
