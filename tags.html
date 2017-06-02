@@ -68,7 +68,10 @@ header-img: "img/tag-bg.jpg"
 			</div>
 			{% endfor %}
 
-			{% if site.data.news %}
+			
+		
+		</div>
+		{% if site.data.news %}
 			<div id="news">
     			<ul>
         			<li><b>博客已累计录入 {{ paginator.total_posts }} 篇文章</b></li>
@@ -79,7 +82,5 @@ header-img: "img/tag-bg.jpg"
 			</div>
 			<br/>
 			{% endif %}
-		
-		</div>
 	</div>
 </div>
