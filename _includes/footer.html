@@ -95,16 +95,16 @@
                     </li>
                     {% endif %}
 
-                    <!-- {% if site.email %}
-                    <li>
-                        <a target="_blank" href="mazhiyu123@qq.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">E</i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %} -->
+                    {% if site.email %}
+                        <li>
+                            <a target="_blank" href="mailto:{{ site.email }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa  fa-stack-1x fa-inverse">M</i>
+                                </span>
+                            </a>
+                        </li>
+                        {% endif %}
 
                 </ul>
                 <p class="copyright text-muted">
@@ -145,4 +145,4 @@
 <!-- Animation -->
 <script src="//cdn.bootcss.com/animsition/4.0.1/js/animsition.min.js"></script>
 <!-- Custom Theme JavaScript -->
-<script src="{{site.cdnurl}}/js/decaywood-blog.min.js?v=2.2.5beta"></script>
+<script src="/js/decaywood-blog.min.js?v=2.2.5beta"></script>
