@@ -18,7 +18,7 @@ cdnurl: http://od4ghyr10.bkt.clouddn.com
 permalink: pretty
 paginate: 20
 exclude: ["less","node_modules","Gruntfile.js","package.json","decaywood.github.io.iml", "_posts/2016-01-02-copy-me.markdown"]
-post-img-count: 5
+post-img-count: 8
 timezone: CN
 gems: [jekyll-paginate]
 
