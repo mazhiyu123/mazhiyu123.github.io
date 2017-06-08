@@ -11,6 +11,8 @@ tags:
     - Linux
 ---
 
+CentOS7搭建SVN服务器
+
 ####  安装subversion
 
 ```
