@@ -2,7 +2,7 @@
 layout:     post
 random-img: true
 title:      CentOS7安装mysql
-date:       2017-06-29 08:47:00
+date:       2017-06-01 08:47:00
 author:     mazhiyu
 description: CentOS7安装mysql
 keywords: MySQL
