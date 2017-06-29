@@ -82,3 +82,32 @@ use mysql;
 UPDATE user SET Password = PASSWORD('newpass') WHERE user = 'root';
 FLUSH PRIVILEGES;
 ```
+
+
+#### 远程连接设置
+
+centos7开放3306端口
+
+```
+// 查看防火墙状态
+firewall-cmd --state 
+
+// 开放端口
+firewall-cmd --add-port=3306/tcp --permanent
+
+// 重启放火墙使设置生效
+firewall-cmd --reload
+```
+
+mysql允许远程访问
+
+```
+grant all privileges on *.* to root@'%' identified by 'newpwd' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
+如果是新用户而不是root，则要先新建用户
+
+```
+create user 'username'@'%' identified by 'newpwd'; 
+```
