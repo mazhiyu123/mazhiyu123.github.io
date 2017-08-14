@@ -16,7 +16,7 @@ cdnurl: http://od4ghyr10.bkt.clouddn.com
 
 # Build settings
 permalink: pretty
-paginate: 20
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","decaywood.github.io.iml", "_posts/2016-01-02-copy-me.markdown"]
 post-img-count: 13
 timezone: CN
